@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 body {
   font-family: "Roboto", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+  background-color: #f6f1f1;
 }
 
 * {
@@ -17,6 +22,26 @@ button {
   background: none;
 }
 
+input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.theme-red {
+  background-color: #ff6969 !important;
+  color: #faf0e6 !important;
+}
+
+.theme-function {
+  background-color: #f0b86e !important;
+  color: #352f44 !important;
+}
+
+.theme-red-text {
+  color: #ff6969 !important;
+}
+
 .container {
   width: 100%;
   height: 100vh;
@@ -26,41 +51,30 @@ button {
 }
 
 .calculator {
-  background-color: #352F44;
+  background-color: #352f44;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 1.2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
+  box-shadow: 2px 0px 5px -2px rgba(0, 0, 0, 0.4);
 }
-
-.screen {
-  background-color: #5C5470;
-  border-radius: 10px;
-  width: 100%;
+.calculator .screen {
   height: 100px;
-  padding: 1rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-}
-.screen .buffer, .screen .res {
-  color: #D8D9DA;
-  flex-basis: 100%;
-  width: 100%;
-  display: flex;
   align-items: center;
+  border-radius: 10px;
+  background-color: #5c5470;
 }
-.screen .buffer {
-  justify-content: flex-end;
+.calculator .screen .res {
+  overflow: hidden;
+  color: #d8d9da;
+  font-size: 20px;
+  text-align: right;
 }
-.screen .res {
-  justify-content: flex-start;
-}
-
-.keys {
+.calculator .keys {
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -68,28 +82,30 @@ button {
   grid-gap: 20px;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
 }
-
-.key {
-  font-weight: bold;
+.calculator .keys .key {
+  font-size: 1.2rem;
+  font-weight: 700;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50px;
   height: 50px;
-  border-radius: 10px;
-  background-color: #FAF0E6;
-  background-color: #D8D9DA;
-  color: #5C5470;
-  box-shadow: 0 0 2px -2px #5C5470;
+  border-radius: 15px;
+  background-color: #d8d9da;
+  color: #5c5470;
+  box-shadow: 0 0 2px -2px #5c5470;
 }
-.key.long {
+.calculator .keys .key.long {
   position: absolute;
   bottom: 0;
   right: 0;
   width: 120px;
 }
-.key:active {
-  box-shadow: 0 0 2px 2px #5C5470;
+.calculator .keys .key:active {
+  box-shadow: 0 0 2px 2px #5c5470;
+}
+.calculator #clear-button,
+.calculator #delete-button {
+  font-size: 1rem;
 }/*# sourceMappingURL=index.css.map */
